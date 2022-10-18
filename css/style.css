@@ -11,3 +11,8 @@ footer {
 .current {
     background-color: aqua;
 }
+
+ul {
+    display: inline-block;
+}
+

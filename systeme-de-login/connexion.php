@@ -13,13 +13,13 @@ if($usernameintroduit == $usernameexige && $passwordintroduit == $mdpexige ){
     
     session_start();
     $_SESSION['username'] = $usernameintroduit;
-    header('location: page3.php');
+    header('location: index.php');
     
 
 } else {
 
     // echo "recommence";
 
-    header('location: index.php?msg=error');
+    header('location: index.php?msg=mdppasok');
 
 }

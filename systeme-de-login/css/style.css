@@ -1,0 +1,14 @@
+input {
+            width: 200px;
+        }
+
+
+        .error {
+            color: white;
+            background-color: red;
+        }
+
+
+        li {
+            display: inline-block;
+        }

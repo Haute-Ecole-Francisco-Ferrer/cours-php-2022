@@ -1,43 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        input {
-            width: 200px;
-        }
-
-
-        .error {
-            color: red;
-        }
-    </style>
-    <title>Document</title>
-</head>
-<body>
+<?php include("header.php"); ?>
 
     <?php
-     if(isset($_GET['msg'])) {
+     if(isset($_GET['msg'])) { ?>
 
-   echo  '<h1 class="error">Erreur: recommence</h1>';
+       <div class="error">
 
-    }
+<?php
+        if($_GET['msg'] == "mdppasok") {
 
-        if(isset($_GET['msg2'])) {
+                echo "vos données de connexion ne sont pas bonnes!";
+        }
 
-   echo  '<h1 class="error">Erreur: recommence</h1>';
+        elseif($_GET['msg'] == "paslogue") {
 
-    }
+                echo "Vous devez être connecté pour accéder à cette page!";
+        } ?>
+ 
+
+       </div>
+
+  <?php  } // msg exists
+
+   
 
     ?>
 
+
+<?php
+
+if(!isset($_SESSION['username'])){ ?>
 
     <form action="connexion.php" method="post">
         <input type="text" name="username" placeholder="Introduisez votre username">
         <input type="text" name="pwd" placeholder="Introduisez votre mot de passe">
         <input type="submit" value="Login">
     </form>
+<?php }  ?>
+
+
+<h1>Accueil</h1>
+
 </body>
 </html>

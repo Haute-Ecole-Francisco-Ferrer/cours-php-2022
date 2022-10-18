@@ -7,7 +7,7 @@ if(isset($_SESSION['username'])){
 ?>
 
 
-<h1>Page 3</h1>
+<h1>Page 1</h1>
     <h2>Bienvenue <?php echo $_SESSION['username'];  ?></h2>
 </body>
 </html>
