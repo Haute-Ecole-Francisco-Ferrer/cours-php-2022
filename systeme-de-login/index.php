@@ -3,21 +3,29 @@
     <?php
      if(isset($_GET['msg'])) { ?>
 
-       <div class="error">
+       <!-- <div class="error"> -->
 
-<?php
-        if($_GET['msg'] == "mdppasok") {
+            <?php
+            if($_GET['msg'] == "mdppasok") {
 
-                echo "vos données de connexion ne sont pas bonnes!";
-        }
+                    echo "<p class='error'>vos données de connexion ne sont pas bonnes!</p>";
+            }
 
-        elseif($_GET['msg'] == "paslogue") {
+            elseif($_GET['msg'] == "paslogue") {
 
-                echo "Vous devez être connecté pour accéder à cette page!";
-        } ?>
+                    echo "<p class='error'>Vous devez être connecté pour accéder à cette page!</p>";
+            }
+            
+            elseif($_GET['msg'] == "deconnecte") {
+
+                    echo "<p class='ok'>Vous êtes maintenant déconnecté!</p>";
+            }
+            
+            
+            ?>
  
 
-       </div>
+       <!-- </div> -->
 
   <?php  } // msg exists
 

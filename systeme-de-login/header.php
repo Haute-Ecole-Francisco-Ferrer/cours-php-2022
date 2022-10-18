@@ -9,6 +9,11 @@
 </head>
 <body>
 
+  <header>
+<nav>
+
+
+
     <ul>
         <li><a href="index.php">Accueil</a></li>
 
@@ -20,6 +25,7 @@ if(isset($_SESSION['username'])){ ?>
         <li><a href="page1.php">page 1</a></li>
         <li><a href="page2.php">page 2</a></li>
         <li><a href="page3.php">page 3</a></li>
+        <li><a href="page3.php"><strong>(<?php echo $_SESSION['username']; ?>)</strong></a></li>
 
 
 
@@ -30,6 +36,6 @@ if(isset($_SESSION['username'])){ ?>
 
     </ul>
 
+</nav>
 
-
-    
+ </header>   

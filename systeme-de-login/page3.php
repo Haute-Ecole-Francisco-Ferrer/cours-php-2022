@@ -20,3 +20,5 @@ header('location: index.php?msg=paslogue');
  } 
 
 ?>
+
+<?php include("footer.php"); ?>
