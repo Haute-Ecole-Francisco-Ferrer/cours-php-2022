@@ -22,27 +22,27 @@
 require('connexion.inc.php'); 
 
 
+// if(isset($_GET['genre'])) {
+// $maquery = $conn->prepare("SELECT * FROM etudiants WHERE genre = :markergenre  ORDER BY nom ");
+// $maquery->execute([
+//     'markergenre' => $_GET['genre']
+// ]);
+// } else {
+// $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ");
+// $maquery->execute();
+// }
+
+$maquery = $conn->prepare("SELECT * FROM etudiants WHERE  nom LIKE '%a%' ");
+$maquery->execute();    
 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
 
 
-if(isset($_GET['genre'])) {
-$maquery = $conn->prepare("SELECT * FROM etudiants WHERE genre = :markergenre  ORDER BY nom ");
+
+
+
 // 3 exécution de la requête
-$maquery->execute([
-    'markergenre' => $_GET['genre']
-]);
-} else {
-$maquery = $conn->prepare("SELECT * FROM etudiants  ORDER BY nom ");
-// 3 exécution de la requête
-$maquery->execute();
-}
-
-
-
-
-
 
 
 
