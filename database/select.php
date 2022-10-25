@@ -21,17 +21,7 @@
 // 1 connexion DB
 require('connexion.inc.php'); 
 
-// if (isset($_GET['genre'])) {
 
-// $genre = $_GET['genre'];
-// $maquery = $conn->prepare("SELECT * FROM etudiants WHERE genre = '$genre'");
-
-
-// } else {
-
-// $maquery = $conn->prepare("SELECT * FROM etudiants");
-
-// }
 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
@@ -47,12 +37,6 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
 // print_r($resultat);
 // echo '</pre>';
 
-
-// echo $resultat[2]['prenom'];
-
-// echo '<hr>';
-
-// echo $resultat[2]['prenom'];
 
 //5 on boucle à travers les réultats
 
