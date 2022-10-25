@@ -4,25 +4,18 @@
 require('connexion.inc.php'); 
 
 
-
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$genre = $_POST['genre'];
-
-
 // 2 préparation de la reqête
-$maquery = 'INSERT INTO etudiants(nom, prenom, genre) VALUES (:nom, :prenom, :genre)';
+$maquery = 'INSERT INTO etudiants(nom, prenom, genre) VALUES (:markernom, :markerprenom, :markergenre)';
 
-// Préparation
 $insertetudiant = $conn->prepare($maquery);
 
-// Exécution ! La recette est maintenant en base de données
+// 3 Exécution de la requête
 $insertetudiant->execute([
-    'nom' => $nom,
-    'prenom' => $prenom,
-    'genre' => $genre
+    'markernom' =>  $_POST['nom'],
+    'markerprenom' =>  $_POST['prenom'],
+    'markergenre' =>  $_POST['genre']
 ]);
 
-// echo $nom.$prenom.$genre;
+// redirection vers la page qui affiche tous les étudiants
 
 header('location: select.php');
