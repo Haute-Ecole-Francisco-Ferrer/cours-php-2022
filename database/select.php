@@ -25,12 +25,25 @@ require('connexion.inc.php');
 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
-$maquery = $conn->prepare("SELECT * FROM etudiants WHERE genre = :markergenre  ORDER BY nom ");
 
+
+if(isset($_GET['genre'])) {
+$maquery = $conn->prepare("SELECT * FROM etudiants WHERE genre = :markergenre  ORDER BY nom ");
 // 3 exécution de la requête
 $maquery->execute([
     'markergenre' => $_GET['genre']
 ]);
+} else {
+$maquery = $conn->prepare("SELECT * FROM etudiants  ORDER BY nom ");
+// 3 exécution de la requête
+$maquery->execute();
+}
+
+
+
+
+
+
 
 
 
