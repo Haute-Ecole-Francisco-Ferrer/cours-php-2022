@@ -1,7 +1,9 @@
 
 <a href="select.php?genre=feminin">feminin</a>
 <a href="select.php?genre=masculin">masculin</a>
-<a href="select.php">Tous</a>
+<a href="select.php">Tous</a><hr>
+
+<a href="index.php">accueil</a>
 
 
 <style>
@@ -32,7 +34,7 @@ require('connexion.inc.php');
 // $maquery->execute();
 // }
 
-$maquery = $conn->prepare("SELECT * FROM etudiants WHERE  nom LIKE '%a%' ");
+$maquery = $conn->prepare("SELECT * FROM etudiants ");
 $maquery->execute();    
 
 // 2 préparation de la requête
