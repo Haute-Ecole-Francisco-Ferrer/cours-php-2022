@@ -65,14 +65,27 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="container">
 <table class="table table-striped">
-<tr><th>id</th><th>nom</th><th>prénom</th><th>genre</th><th>modifier</th><th>supprimer</th></tr>
+<tr>
+    <th>id</th>
+    <th>nom</th>
+    <th>prénom</th>
+    <th>genre</th>
+    <th>modifier</th>
+    <th>supprimer</th>
+</tr>
 
 <?php
 //5 on boucle à travers les réultats
 
 foreach ($resultat as $row) { ?>
 
-<tr><td><?php echo $row['id']; ?></td><td><?php echo $row['nom']; ?></td><td><?php echo $row['prenom']; ?></td><td><?php echo $row['genre']; ?></td><td>modifier</td><td>supprimer</td></tr>
+<tr>
+    <td><?php echo $row['id']; ?></td>
+    <td><?php echo $row['nom']; ?></td>
+    <td><?php echo $row['prenom']; ?></td>
+    <td><?php echo $row['genre']; ?></td>
+    <td>modifier</td><td>supprimer</td>
+</tr>
 
 
 
