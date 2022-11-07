@@ -37,24 +37,15 @@ require('connexion.inc.php');
 // $maquery->execute();
 // }
 
-$maquery = $conn->prepare("SELECT * FROM etudiants ");
-$maquery->execute();    
+
+
 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
-
-
-
-
+$maquery = $conn->prepare("SELECT * FROM etudiants ");
 
 // 3 exécution de la requête
-
-
-
-
-
-
-
+$maquery->execute();    
 // 4 stocker les résultats dans un array
 $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC); 
 
@@ -84,7 +75,7 @@ foreach ($resultat as $row) { ?>
     <td><?php echo $row['nom']; ?></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
-    <td>modifier</td><td>supprimer</td>
+    <td>modifier</td><td><a href="">supprimer</a></td>
 </tr>
 
 
