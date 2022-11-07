@@ -72,7 +72,7 @@ foreach ($resultat as $row) { ?>
 
 <tr>
     <td><?php echo $row['id']; ?></td>
-    <td><?php echo $row['nom']; ?></td>
+    <td><a href="detail_etudiant.php?idpasseedansurl=<?php echo $row['id']; ?>"><?php echo $row['nom']; ?></a></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
     <td><a href="modifier.php?idpasseedansurl=<?php echo $row['id']; ?>">modifier</a></td>

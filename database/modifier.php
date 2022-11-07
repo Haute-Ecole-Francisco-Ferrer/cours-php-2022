@@ -28,6 +28,9 @@ foreach ($resultat as $row) {
         <input type="text" name="prenom" value="<?php echo $row['prenom']; ?>">
         <input type="text" name="genre" value="<?php echo $row['genre']; ?>">
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <textarea name="bio" id="" cols="30" rows="10">
+            <?php echo $row['bio']; ?>
+        </textarea>
         <input type="submit" value="Modifier">
 
 

@@ -8,11 +8,12 @@ $id = $_POST["id"];
 $prenom = $_POST["prenom"];
 $nom = $_POST["nom"];
 $genre = $_POST["genre"];
+$bio = $_POST["bio"];
 
 
 //3) préparer la requête   );
 
- $sqlQuery = "UPDATE etudiants SET nom = :nom, prenom=:prenom, genre=:genre WHERE id = :id";
+ $sqlQuery = "UPDATE etudiants SET nom = :nom, prenom=:prenom, genre=:genre, bio=:bio WHERE id = :id";
  $marequete = $conn->prepare($sqlQuery);
 
  
@@ -21,7 +22,8 @@ $marequete->execute(array(
     'id' => $id,
     'nom' => $nom,
     'prenom' => $prenom,
-    'genre' => $genre
+    'genre' => $genre,
+    'bio' => $bio
 )); 
 
 header("location: select.php");
