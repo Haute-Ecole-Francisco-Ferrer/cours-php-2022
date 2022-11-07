@@ -75,7 +75,8 @@ foreach ($resultat as $row) { ?>
     <td><?php echo $row['nom']; ?></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
-    <td>modifier</td><td><a href="">supprimer</a></td>
+    <td><a href="modifier.php?idpasseedansurl=<?php echo $row['id']; ?>">modifier</a></td>
+    <td><a href="delete.php?idpasseedansurl=<?php echo $row['id']; ?>">supprimer</a></td>
 </tr>
 
 
