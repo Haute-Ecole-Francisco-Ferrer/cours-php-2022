@@ -27,7 +27,8 @@ foreach ($resultat as $row) {
         <input type="text" name="nom" value="<?php echo $row['nom']; ?>">
         <input type="text" name="prenom" value="<?php echo $row['prenom']; ?>">
         <input type="text" name="genre" value="<?php echo $row['genre']; ?>">
-        <input type="submit" value="inserer">
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <input type="submit" value="Modifier">
 
 
     </form>
