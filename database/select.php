@@ -58,6 +58,7 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
 <table class="table table-striped">
 <tr>
     <th>id</th>
+    <th>image</th>
     <th>nom</th>
     <th>prénom</th>
     <th>genre</th>
@@ -72,6 +73,7 @@ foreach ($resultat as $row) { ?>
 
 <tr>
     <td><?php echo $row['id']; ?></td>
+    <td><img src="uploads/<?php echo $row['monimage']; ?>" width="50" alt=""></td>
     <td><a href="detail_etudiant.php?idpasseedansurl=<?php echo $row['id']; ?>"><?php echo $row['nom']; ?></a></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
@@ -84,6 +86,15 @@ foreach ($resultat as $row) { ?>
  <?php } ?>
 
 </table>
+  <form action="insert.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="nom" placeholder="nom">
+        <input type="text" name="prenom" placeholder="prenom">
+        <input type="text" name="genre" placeholder="genre">
+        <input type="file" name="maphoto" >
+        <input type="submit" value="inserer">
+
+
+    </form>
 </div>
 
 
