@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
 <?php
 // 1 connexion DB
 require('connexion.inc.php'); 
@@ -19,7 +17,10 @@ $maquery->execute([
  ]);    
 // 4 stocker les résultats dans un array
 $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC); 
-foreach ($resultat as $row) { ?>
+foreach ($resultat as $row) {} ?>
+<body>
+    
+
 
 
 <h1>nom: <?php echo $row['nom']; ?></h1>
@@ -27,7 +28,10 @@ foreach ($resultat as $row) { ?>
 <p>Bio: <?php echo $row['bio']; ?></p>
 
 
- <?php } ?>
+<img src="uploads/<?php echo $row['monimage']; ?>" alt="">
+
+
+ <?php  ?>
 
 </body>
 </html>

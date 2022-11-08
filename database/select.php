@@ -73,7 +73,19 @@ foreach ($resultat as $row) { ?>
 
 <tr>
     <td><?php echo $row['id']; ?></td>
-    <td><img src="uploads/<?php echo $row['monimage']; ?>" width="50" alt=""></td>
+    <td><img src="uploads/<?php 
+    
+    if($row['monimage'] == "") {
+        echo 'avatar.png';
+    } else {
+        echo $row['monimage'];
+    }
+    
+    
+    
+    
+    
+     ?>" width="50" alt=""></td>
     <td><a href="detail_etudiant.php?idpasseedansurl=<?php echo $row['id']; ?>"><?php echo $row['nom']; ?></a></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
