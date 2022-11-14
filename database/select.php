@@ -123,14 +123,31 @@ foreach ($resultat as $row) { ?>
         <input type="file" name="maphoto" >
 
     <BR>    
-<input type="checkbox" name="vehicle[]" value="Bike">
-<label for="vehicle1"> I have a bike</label><br>
 
-<input type="checkbox" name="vehicle[]" value="Car">
+<?php 
+// 2 préparation de la requête
+// $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
+$maquery = $conn->prepare("SELECT nom FROM categories ");
+
+// 3 exécution de la requête
+$maquery->execute();    
+// 4 stocker les résultats dans un array
+$resultat = $maquery->fetchAll(PDO::FETCH_ASSOC); 
+
+foreach ($resultat as $row) { ?>
+
+
+
+<input type="checkbox" name="vehicle[]" value="<?php echo $row['nom']; ?>">
+<label for="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></label><br>
+
+<!-- <input type="checkbox" name="vehicle[]" value="Car">
 <label for="vehicle2"> I have a car</label><br>
 
 <input type="checkbox" name="vehicle[]" value="Boat">
-<label for="vehicle3"> I have a boat</label><br>
+<label for="vehicle3"> I have a boat</label><br> -->
+
+<?php } ?>
 
 
 
