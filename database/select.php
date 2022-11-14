@@ -138,14 +138,8 @@ foreach ($resultat as $row) { ?>
 
 
 
-<input type="checkbox" name="vehicle[]" value="<?php echo $row['nom']; ?>">
+<input type="checkbox" name="vehicle[]" id="<?php echo $row['nom']; ?>" value="<?php echo $row['nom']; ?>">
 <label for="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></label><br>
-
-<!-- <input type="checkbox" name="vehicle[]" value="Car">
-<label for="vehicle2"> I have a car</label><br>
-
-<input type="checkbox" name="vehicle[]" value="Boat">
-<label for="vehicle3"> I have a boat</label><br> -->
 
 <?php } ?>
 
