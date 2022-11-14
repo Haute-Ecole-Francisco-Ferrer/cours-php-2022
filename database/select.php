@@ -62,6 +62,7 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
     <th>nom</th>
     <th>prénom</th>
     <th>genre</th>
+    <th>catgories</th>
     <th>modifier</th>
     <th>supprimer</th>
 </tr>
@@ -89,6 +90,23 @@ foreach ($resultat as $row) { ?>
     <td><a href="detail_etudiant.php?idpasseedansurl=<?php echo $row['id']; ?>"><?php echo $row['nom']; ?></a></td>
     <td><?php echo $row['prenom']; ?></td>
     <td><?php echo $row['genre']; ?></td>
+    <td><?php 
+    
+    
+    $arraycategories = unserialize($row['categories']); 
+   
+
+    foreach ($arraycategories as $categorie) {
+
+                echo $categorie." ";
+    }
+    
+    
+    
+    
+    
+    
+    ?></td>
     <td><a href="modifier.php?idpasseedansurl=<?php echo $row['id']; ?>">modifier</a></td>
     <td><a href="delete.php?idpasseedansurl=<?php echo $row['id']; ?>">supprimer</a></td>
 </tr>
@@ -103,6 +121,19 @@ foreach ($resultat as $row) { ?>
         <input type="text" name="prenom" placeholder="prenom">
         <input type="text" name="genre" placeholder="genre">
         <input type="file" name="maphoto" >
+
+    <BR>    
+<input type="checkbox" name="vehicle[]" value="Bike">
+<label for="vehicle1"> I have a bike</label><br>
+
+<input type="checkbox" name="vehicle[]" value="Car">
+<label for="vehicle2"> I have a car</label><br>
+
+<input type="checkbox" name="vehicle[]" value="Boat">
+<label for="vehicle3"> I have a boat</label><br>
+
+
+
         <input type="submit" value="inserer">
 
 

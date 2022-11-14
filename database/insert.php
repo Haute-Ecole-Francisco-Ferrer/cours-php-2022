@@ -5,7 +5,7 @@ require('connexion.inc.php');
 
 
 // 2 préparation de la reqête
-$maquery = 'INSERT INTO etudiants(nom, prenom, genre, monimage) VALUES (:markernom, :markerprenom, :markergenre, :markermonimage)';
+$maquery = 'INSERT INTO etudiants(nom, prenom, genre, monimage, categories) VALUES (:markernom, :markerprenom, :markergenre, :markermonimage, :markermescategories)';
 
 $prepaparationdemarequete = $conn->prepare($maquery);
 
@@ -14,7 +14,8 @@ $prepaparationdemarequete->execute([
     'markernom' =>  $_POST['nom'],
     'markerprenom' =>  $_POST['prenom'],
     'markergenre' =>  $_POST['genre'],
-    'markermonimage' =>  $_FILES['maphoto']['name']
+    'markermonimage' =>  $_FILES['maphoto']['name'],
+    'markermescategories' =>  serialize($_POST['vehicle'])
 ]);
 
 
