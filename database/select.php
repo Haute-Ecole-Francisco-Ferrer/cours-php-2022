@@ -123,7 +123,7 @@ foreach ($resultat as $row) { ?>
         <input type="file" name="maphoto" >
 
     <BR>    
-
+<select class="form-select" name="etudiant">
 <?php 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
@@ -138,11 +138,13 @@ foreach ($resultat as $row) { ?>
 
 
 
-<input type="checkbox" name="vehicle[]" id="<?php echo $row['nom']; ?>" value="<?php echo $row['nom']; ?>">
-<label for="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></label><br>
+<!-- <input type="checkbox" name="categories[]" id="<?php echo $row['nom']; ?>" value="<?php echo $row['nom']; ?>">
+<label for="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></label><br> -->
+
+<option value="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></option>
 
 <?php } ?>
-
+</select>
 
 
         <input type="submit" value="inserer">

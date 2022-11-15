@@ -15,7 +15,7 @@ $prepaparationdemarequete->execute([
     'markerprenom' =>  $_POST['prenom'],
     'markergenre' =>  $_POST['genre'],
     'markermonimage' =>  $_FILES['maphoto']['name'],
-    'markermescategories' =>  serialize($_POST['vehicle'])
+    'markermescategories' =>  serialize($_POST['categories'])
 ]);
 
 
