@@ -44,9 +44,6 @@ foreach ($resultat as $row) { ?>
 </tr>
 
 
-<img src="" alt="">
-
-
  <?php } ?>
     
 </body>
