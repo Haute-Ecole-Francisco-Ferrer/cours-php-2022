@@ -15,10 +15,17 @@ foreach ($resultat as $row) {
 
     if( $_POST["pwdform"] == $row["password"]) {
 
-         echo "ok c'est bon";
+        //  echo "ok c'est bon";
+        session_start();
+        $_SESSION['username'] = $_POST["usernameform"];
 
     } else {
-        echo "PAS bon";
+        // echo "PAS bon";
+
+        header('location: index.php?msg=erreurlogin');
+
+
+
     }
 
    

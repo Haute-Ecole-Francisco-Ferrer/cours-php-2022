@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+
+if(isset($_GET["msg"])){
+
+
+if($_GET["msg"] == "erreurlogin") {
+    echo '<h1>erreur de login</h1>';
+}
+if($_GET["msg"] == "connexionnecessaire") {
+    echo '<h1>vous devez être logué pour accéder à cette page</h1>';
+}
+
+
+
+
+}// if isset
+
+?>
+
+
 
     <form action="login.php" method="post">
         <input type="text" name="usernameform" placeholder="Introduisez votre username">
