@@ -1,6 +1,6 @@
 <?php
 
-require('../sneakers/connexion.inc.php'); 
+require('connexion.inc.php'); 
 
 $maquery = $conn->prepare("SELECT password FROM users WHERE username = :usernamerecu ");
 
