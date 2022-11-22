@@ -15,7 +15,15 @@ require('connexion.inc.php');
 
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
-$maquery = $conn->prepare("SELECT * FROM sneakers ");
+$maquery = $conn->prepare("
+SELECT *, 
+sneakers.nom as nomsneakers,
+marques.nom as nommarque
+FROM sneakers 
+LEFT JOIN marques ON sneakers.idmarque = marques.id
+
+
+");
 
 // 3 exécution de la requête
 $maquery->execute();    
@@ -38,9 +46,9 @@ foreach ($resultat as $row) { ?>
 
 <tr>
     <td><?php echo $row['id']; ?></td>
-    <td><img src="uploads/<?php echo $row['photo']; ?>" width="50" alt="<?php echo $row['nom']; ?>" title="<?php echo $row['nom']; ?>"></td>
-    <td><?php echo $row['nom']; ?></td>
-    <td><?php echo $row['idmarque']; ?></td>
+    <td><img src="uploads/<?php echo $row['photo']; ?>" width="50" alt="<?php echo $row['nomsneakers']; ?>" title="<?php echo $row['nomsneakers']; ?>"></td>
+    <td><?php echo $row['nomsneakers']; ?></td>
+    <td><?php echo $row['nommarque']; ?></td>
 </tr>
 
 
