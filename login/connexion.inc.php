@@ -10,7 +10,7 @@
           // // remote
             // $servername = 'localhost';
             // $username = 'uhti7837_samy';
-            // $password = 'dsdfszdzeteds';
+            // $password = 'JqZFXx8rt+LO';
             // $database = 'uhti7837_samy';
               
             

@@ -18,6 +18,7 @@ foreach ($resultat as $row) {
         //  echo "ok c'est bon";
         session_start();
         $_SESSION['username'] = $_POST["usernameform"];
+        header('location: page2.php');
 
     } else {
         // echo "PAS bon";
