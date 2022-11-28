@@ -1,9 +1,7 @@
 
 <?php
 session_start();
-
 if(isset($_SESSION['username'])) {
-
 ?>
 
 
@@ -17,6 +15,7 @@ if(isset($_SESSION['username'])) {
     <title>Document</title>
 </head>
 <body>
+    <a href="deconnexion.php">déconnexion</a>
     <h2>Bienvenue <?php echo $_SESSION['username']; ?></h2>
 </body>
 </html>
@@ -24,9 +23,6 @@ if(isset($_SESSION['username'])) {
 
 <?php
 }  else {
-
      header('location: index.php?msg=connexionnecessaire');
-
-
 }
 ?>

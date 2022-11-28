@@ -16,7 +16,8 @@ require('connexion.inc.php');
 // 2 préparation de la requête
 // $maquery = $conn->prepare("SELECT * FROM etudiants ORDER BY nom ASC");
 $maquery = $conn->prepare("
-SELECT *, 
+SELECT *,
+sneakers.id as iddemasneakers, 
 sneakers.nom as nomsneakers,
 marques.nom as nommarque
 FROM sneakers 
@@ -38,6 +39,8 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
     <th>image</th>
     <th>nom</th>
     <th>idmarque</th>
+    <th>publie</th>
+    <th>a la une</th>
 </tr>
 <?php
 //5 on boucle à travers les réultats
@@ -45,10 +48,27 @@ $resultat = $maquery->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultat as $row) { ?>
 
 <tr>
-    <td><?php echo $row['id']; ?></td>
+    <td><?php echo $row['iddemasneakers']; ?></td>
     <td><img src="uploads/<?php echo $row['photo']; ?>" width="50" alt="<?php echo $row['nomsneakers']; ?>" title="<?php echo $row['nomsneakers']; ?>"></td>
     <td><?php echo $row['nomsneakers']; ?></td>
     <td><?php echo $row['nommarque']; ?></td>
+    <td>
+        
+
+        <?php if($row['publie'] == 0) {  ?>
+        
+        <a href="publier.php?id=<?php echo $row['iddemasneakers']; ?>">publier</a>
+        <?php } else { ?>
+        <a href="depublier.php?id=<?php echo $row['iddemasneakers']; ?>">dépublier</a>
+
+
+         <?php } ?>
+        
+        
+        
+        
+        </td>
+    <td><a href="une.php?id=<?php echo $row['iddemasneakers']; ?>">mettre a la une</a></td>
 </tr>
 
 
